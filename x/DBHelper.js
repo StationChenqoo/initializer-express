@@ -4,11 +4,12 @@ class DBHelper {
 
   connectDatabase = async (request, response, next) => {
     let connection = mongoose.createConnection();
-    let db = await connection.openUri(
+    let client = await connection.openUri(
       "mongodb://root:123456@localhost/typecho?authSource=admin",
       { maxPoolSize: 100 }
     );
-    return db;
+    // console.log('DBHelper.connectDatabase: ', db == null);
+    return client;
   };
 
   disconnectDatabase = (db) => {

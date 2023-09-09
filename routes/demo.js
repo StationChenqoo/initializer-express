@@ -1,15 +1,20 @@
 var express = require("express");
-const { getReadableDatabase } = require("../x/DBHelper");
+const { default: mongoose } = require("mongoose");
+const { DBHelper } = require("../x/DBHelper");
 var router = express.Router();
 
 /* GET users listing. */
 router.get("/HelloWorld", function (request, response, next) {
-  request.send(JSON.stringify({ data: "HelloWorld.", status: 0 }));
+  response.send(JSON.stringify({ data: "HelloWorld.", status: 0 }));
 });
 
 router.get("/testDB", async function (request, response, next) {
-  let db = await getReadableDatabase();
-  request.send(JSON.stringify({ data: "HelloWorld.", status: 0 }));
+  let dbHelper = new DBHelper();
+  let connection = await dbHelper.connectDatabase();
+  // console.log("testDB.connectDatabase: ", connection.db == null);
+  let datas = await connection.db.collection("article").find().toArray();
+  dbHelper.disconnectDatabase(connection);
+  response.send({ data: datas, status: 0 });
 });
 
 module.exports = router;
