@@ -6,6 +6,7 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var demoRouter = require("./routes/demo");
+const { DBHelper } = require("./x/DBHelper");
 
 var app = express();
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Custom routes
 app.use("/", indexRouter);
 app.use("/demo", demoRouter);
 
