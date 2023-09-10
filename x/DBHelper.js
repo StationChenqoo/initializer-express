@@ -5,7 +5,7 @@ class DBHelper {
   connectDatabase = async (request, response, next) => {
     let connection = mongoose.createConnection();
     let client = await connection.openUri(
-      "mongodb://root:123456@localhost/typecho?authSource=admin",
+      "mongodb://root:123456@localhost/BaijiaJiangtan?authSource=admin",
       { maxPoolSize: 100 }
     );
     // console.log('DBHelper.connectDatabase: ', db == null);

@@ -1,4 +1,10 @@
+# initializer-Express.JS
+
+## MongoDB 常用命令
+
+- `admin` 身份登录：
+
 ```bash
-➜  initializer-express kill -9 30961
-➜  initializer-express lsof -i :3000
+➜  ~ mongo -u root -p 123456 --authenticationDatabase admin
 ```
+

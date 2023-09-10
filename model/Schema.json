@@ -1,0 +1,96 @@
+{
+  "Person": {
+    "id": "String",
+    "avatar": "String",
+    "mobile": "String",
+    "passsword": "String",
+    "devices": [],
+    "smsCode": "String",
+    "smsTimes": [
+      {
+        "ip": "String",
+        "time": "Srting"
+      }
+    ],
+    "nick": "String",
+    "motto": "String",
+    "createTime": "String",
+    "updateTime": "String",
+    "qq": "String",
+    "wechat": "String",
+    "apple": "String"
+  },
+  "Version": {
+    "id": "a.b.c",
+    "force": "Boolean",
+    "title": "String",
+    "message": "String",
+    "updateTime": "String",
+    "createTime": "String"
+  },
+  "Series": {
+    "id": "String",
+    "teacherId": "String",
+    "title": "String",
+    "message": "String",
+    "note": "Srting",
+    "capture": "String",
+    "status": "Number",
+    "chapters": [
+      {
+        "id": "String",
+        "title": "String",
+        "message": "String",
+        "duration": "Number",
+        "cctv": {
+          "id": "String",
+          "web": "String",
+          "m3u8": "String",
+          "mp3": "String"
+        },
+        "counts": {
+          "like": "Number",
+          "dislike": "Number",
+          "click": "Number",
+          "collect": "Number"
+        },
+        "capture": "String"
+      }
+    ],
+    "createTime": "String",
+    "updateTime": "String"
+  },
+  "Teacher": {
+    "id": "String",
+    "avatar": "String",
+    "title": "String",
+    "message": "String",
+    "createTime": "String",
+    "updateTime": "String"
+  },
+  "Do": {
+    "id": "String",
+    "batteredId": "String",
+    "do": "like | dislike | collect | click",
+    "createTime": "String",
+    "updateTime": "String"
+  },
+  "Discuss": {
+    "id": "String",
+    "personId": "String",
+    "batteredId": "String",
+    "status": "Number",
+    "createTime": "String",
+    "updateTime": "String",
+    "children": [
+      {
+        "Discuss": []
+      }
+    ]
+  },
+  "Search": {
+    "id": "String",
+    "personId": "String",
+    "text": "String"
+  }
+}
