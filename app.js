@@ -6,6 +6,7 @@ var logger = require("morgan");
 const timeMiddleware = require("./middleware/timeMiddleware");
 var indexRouter = require("./routes/index");
 var demoRouter = require("./routes/demo");
+var spiderRouter = require("./routes/spider");
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Custom routes
 app.use("/", indexRouter);
 app.use("/demo", demoRouter);
+app.use("/spider", spiderRouter);
 
 /** 404 */
 app.use(function (request, response, next) {
