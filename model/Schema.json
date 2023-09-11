@@ -4,14 +4,6 @@
     "avatar": "String",
     "mobile": "String",
     "passsword": "String",
-    "devices": [],
-    "smsCode": "String",
-    "smsTimes": [
-      {
-        "ip": "String",
-        "time": "Srting"
-      }
-    ],
     "nick": "String",
     "motto": "String",
     "createTime": "String",
@@ -69,6 +61,14 @@
     "status": "Number",
     "createTime": "String",
     "updateTime": "String"
+  },
+  "Sms": {
+    "id": "String",
+    "ip": "String",
+    "mobile": "String",
+    "code": "String",
+    "date": "String",
+    "time": "String"
   },
   "Do": {
     "id": "String",

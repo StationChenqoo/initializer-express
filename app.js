@@ -7,6 +7,9 @@ const timeMiddleware = require("./middleware/timeMiddleware");
 var indexRouter = require("./routes/index");
 var demoRouter = require("./routes/demo");
 var spiderRouter = require("./routes/spider");
+var seriesRouter = require("./routes/series");
+var teacherRouter = require("./routes/teacher");
+var personRouter = require("./routes/person");
 
 var app = express();
 
@@ -22,9 +25,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Custom routes
-app.use("/", indexRouter);
-app.use("/demo", demoRouter);
-app.use("/spider", spiderRouter);
+var routes = [
+  { name: "/", value: indexRouter },
+  { name: "/demo", value: demoRouter },
+  { name: "/spider", value: spiderRouter },
+  { name: "/series", value: seriesRouter },
+  { name: "/teacher", value: teacherRouter },
+  { name: "/person", value: personRouter },
+];
+for (let i = 0; i < routes.length; i++) {
+  app.use(routes[i].name, routes[i].value);
+}
 
 /** 404 */
 app.use(function (request, response, next) {

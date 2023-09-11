@@ -6,4 +6,7 @@ router.get("/", function (reqest, response, next) {
   response.render("index", { title: "Express" });
 });
 
+router.get("/testGet", function (reqest, response, next) {
+  response.send({ prams: reqest.query });
+});
 module.exports = router;
