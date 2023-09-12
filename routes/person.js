@@ -19,7 +19,25 @@ router.get("/testDB", async function (request, response, next) {
   response.send({ data: datas, status: 0 });
 });
 
-/** 测试 */
+/** 密码登录 */
+router.get("/checkPassword", async function (request, response, next) {
+  let dbHelper = new DBHelper();
+  let connection = await dbHelper.connectDatabase();
+  let { mobile, password } = request.query;
+  let result = {};
+  let person = await connection.db
+    .collection("Person")
+    .findOne({ mobile, password });
+  if (mobile && password && person) {
+    result = { data: person, status: true };
+  } else {
+    result = { status: false, message: "手机号码或者密码错误 ..." };
+  }
+  dbHelper.disconnectDatabase(connection);
+  response.send(result);
+});
+
+/** 发送短信验证码 */
 router.get("/sendSMS", async function (request, response, next) {
   let result = {};
   let mobile = request.query?.mobile;
@@ -63,6 +81,7 @@ router.get("/sendSMS", async function (request, response, next) {
   response.send(result);
 });
 
+/** 验证验证码 */
 // db.getCollection('Sms').find({date: '2023-09-11', mobile: '15552198996'}).sort({time: -1}).limit(1);
 router.get("/checkSMS", async function (request, response, next) {
   let dbHelper = new DBHelper();
@@ -89,7 +108,7 @@ router.get("/checkSMS", async function (request, response, next) {
           id,
           avatar: "https://cdn.cctv3.net/net.cctv3.BaijiaJiangtan/i.gif",
           mobile,
-          passsword: "",
+          password: StringUtils.buildNanoid(),
           nick: `用户${id.substring(0, 9)}`,
           motto: "请用一句话来描述自己 ...",
           createTime: new Date().toLocaleString(),

@@ -3,7 +3,7 @@
     "id": "String",
     "avatar": "String",
     "mobile": "String",
-    "passsword": "String",
+    "password": "String",
     "nick": "String",
     "motto": "String",
     "createTime": "String",
@@ -93,6 +93,7 @@
   "Search": {
     "id": "String",
     "personId": "String",
-    "text": "String"
+    "text": "String",
+    "time": "String"
   }
 }

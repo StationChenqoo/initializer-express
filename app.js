@@ -4,12 +4,13 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const timeMiddleware = require("./middleware/timeMiddleware");
-var indexRouter = require("./routes/index");
-var demoRouter = require("./routes/demo");
-var spiderRouter = require("./routes/spider");
-var seriesRouter = require("./routes/series");
-var teacherRouter = require("./routes/teacher");
-var personRouter = require("./routes/person");
+var indexRoute = require("./routes/index");
+var demoRoute = require("./routes/demo");
+var spiderRoute = require("./routes/spider");
+var seriesRoute = require("./routes/series");
+var teacherRoute = require("./routes/teacher");
+var personRoute = require("./routes/person");
+var searchRoute = require("./routes/search");
 
 var app = express();
 
@@ -26,12 +27,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Custom routes
 var routes = [
-  { name: "/", value: indexRouter },
-  { name: "/demo", value: demoRouter },
-  { name: "/spider", value: spiderRouter },
-  { name: "/series", value: seriesRouter },
-  { name: "/teacher", value: teacherRouter },
-  { name: "/person", value: personRouter },
+  { name: "/", value: indexRoute },
+  { name: "/demo", value: demoRoute },
+  { name: "/spider", value: spiderRoute },
+  { name: "/series", value: seriesRoute },
+  { name: "/teacher", value: teacherRoute },
+  { name: "/person", value: personRoute },
+  { name: "/search", value: searchRoute },
 ];
 for (let i = 0; i < routes.length; i++) {
   app.use(routes[i].name, routes[i].value);
