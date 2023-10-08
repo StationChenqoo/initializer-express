@@ -8,12 +8,12 @@ router.get("/selectShuffleTeachers", async function (request, response, next) {
   let connection = await dbHelper.connectDatabase();
   // console.log("testDB.connectDatabase: ", connection.db == null);
   let size = request.query?.limit || 10;
-  let datas = await connection.db
+  let data = await connection.db
     .collection("Teacher")
     .aggregate([{ $sample: { size: parseInt(size) } }])
     .toArray();
   dbHelper.disconnectDatabase(connection);
-  response.send({ datas, status: 0 });
+  response.send({ data, status: true });
 });
 
 module.exports = router;

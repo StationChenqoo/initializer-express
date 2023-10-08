@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get("/HelloWorld", function (request, response, next) {
-  response.send(JSON.stringify({ data: "HelloWorld.", status: 0 }));
+  response.send(JSON.stringify({ data: "HelloWorld.", status: true }));
 });
 
 /** 测试 */
@@ -15,7 +15,7 @@ router.get("/testDB", async function (request, response, next) {
   // console.log("testDB.connectDatabase: ", connection.db == null);
   let datas = await connection.db.collection("test").find().toArray();
   dbHelper.disconnectDatabase(connection);
-  response.send({ data: datas, status: 0 });
+  response.send({ data: datas, status: true });
 });
 
 module.exports = router;

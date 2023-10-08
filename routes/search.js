@@ -6,7 +6,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get("/HelloWorld", function (request, response, next) {
-  response.send(JSON.stringify({ data: "HelloWorld.", status: 0 }));
+  response.send(JSON.stringify({ data: "HelloWorld.", status: true }));
 });
 
 /** 记录搜索关键词 */
@@ -46,7 +46,7 @@ router.get("/selectPopularSearches", async function (request, response, next) {
   dbHelper.disconnectDatabase(connection);
   response.send({
     status: true,
-    data: result.map((it) => ({ key: it._id, value: it.count })),
+    data: result.map((it) => ({ name: it._id, value: it.count })),
   });
 });
 

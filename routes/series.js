@@ -22,7 +22,7 @@ router.get("/selectLatestSeries", async function (request, response, next) {
   };
   delete data["chapters"];
   dbHelper.disconnectDatabase(connection);
-  response.send({ data, status: 0 });
+  response.send({ data, status: true });
 });
 
 /** 随机的n个Series */
@@ -48,7 +48,7 @@ router.get("/selectShuffleSerieses", async function (request, response, next) {
   });
 
   dbHelper.disconnectDatabase(connection);
-  response.send({ datas: _datas, status: 0 });
+  response.send({ data: _datas, status: true });
 });
 
 module.exports = router;
