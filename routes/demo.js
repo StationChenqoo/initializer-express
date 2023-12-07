@@ -29,7 +29,7 @@ router.get("/test", async function (request, response, next) {
 /** 测试 */
 router.get("/select51Job", async function (request, response, next) {
   const RENPHO = {
-    date: "2020年02月 ~ 2020年6月",
+    date: "2021年02月 ~ 2021年6月",
     name: "深圳市润丰数码技术有限公司",
     result: ["Renpho Health (iOS: AppStore)", "Renpho跨境电商后台管理系统"],
     experience: [
@@ -81,7 +81,8 @@ router.get("/select51Job", async function (request, response, next) {
     conclusion: [
       "熟练使用React Native和Flutter进行android和iOS跨平台应用的开发；",
       "熟悉iOS和android个手机厂商的上架流程；",
-      "熟悉iOS和android屏幕适配、权限申请、状态管理、数据缓存等常见框架，了解基本原理；",
+      "熟悉iOS和android屏幕适配、权限申请、状态管理、数据缓存等常见框架；",
+      "熟练编写原生android模块对于React Native和Flutter的扩充支持；",
       "熟悉React Native进行CodePush热更新；",
       "熟练根据业务场景对组件抽象化，进行公共组件和通用逻辑的封装；",
       "了解Spring Boot / KoaJS，可以使用Java/NodeJS编写后端接口；",
@@ -89,7 +90,7 @@ router.get("/select51Job", async function (request, response, next) {
     ],
     companies: [
       {
-        date: "2020年06月 ~ 2022年9月",
+        date: "2021年06月 ~ 2023年9月",
         name: "云南白药集团上海健康产品有限公司",
         result: [
           "以下App/微信小程序，均已上线，可通过iOS和android应用商店，或者微信小程序进行体验 ...",
@@ -102,6 +103,7 @@ router.get("/select51Job", async function (request, response, next) {
           "参加2023年Google IO/Connect开发者大会Flutter专场；",
           "和产品、UI、测试、运营、用户等相关人员完成App的需求 → 开发 → 测试 → 灰度 → 上线整个流程；",
           "对React Native和Flutter进行技术调研和选型，基本框架使用Flutter，需要热更新和需要WebView交互的页面使用React Native；",
+          "开源React Native瀑布流组件react-native-staggered-list，API无缝对接FlatList，支持列数自定义，自动计算高度，下拉刷新，上拉加载更多等；",
           "高度还原设计稿，进行android和iOS的屏幕的适配；",
           "搭建公共组件库，进行常用组件的封装；",
           "用Redux和Provider进行整个App数据流状态的管理以及必要时的数据缓存的工作；",
@@ -145,7 +147,9 @@ router.get("/select51Job", async function (request, response, next) {
       "熟悉各种图形组件库的二次封装；",
       "熟练使用Ali Hooks以及自定义Hooks进行复杂业务逻辑的处理；",
       "熟悉Linux和Windows Server对于各种Web框架应用的部署；",
-      "熟练使用微信小程序开发者工具进行小程序的开发。",
+      "熟练使用Jenkins进行一键构建应用；",
+      "熟练使用微信小程序开发者工具进行小程序的开发；",
+      "熟练使用其他混合框架例如React Native、Flutter进行跨端android/iOS应用开发。",
     ],
     result: [
       "采之汲App后台管理系统",
@@ -155,7 +159,7 @@ router.get("/select51Job", async function (request, response, next) {
     ],
     companies: [
       {
-        date: "2020年06月 ~ 2022年9月",
+        date: "2020年06月 ~ 2023年9月",
         name: "云南白药集团上海健康产品有限公司",
         result: [
           "以下App/微信小程序，均已上线，可通过iOS和android应用商店，或者微信小程序进行体验 ...",
